@@ -16,7 +16,13 @@ public class Main {
         while (b) {
             System.out.println("Введите число");
             String n = scanner.nextLine();
-            long num = Long.parseLong(n);
+            long num;
+            try {
+                num = Long.parseLong(n);
+            } catch (Exception e) {
+                System.out.println("неверные данные");
+                continue;
+            }
             System.out.println("Введите словесное описание");
             String s = scanner.nextLine();
             values.put(num, s);
