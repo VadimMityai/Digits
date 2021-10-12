@@ -24,7 +24,7 @@ public class ToWords {
         this.myNums.add(this.degrees);
     }
 
-    public String makeNum(long i) {
+    public String makeNum(String i) {
         StringBuilder numb = new StringBuilder();
         StringBuilder word = new StringBuilder();
         numb.append(i);

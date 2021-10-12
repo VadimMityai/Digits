@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class Hundreds extends Num {
 
-    private TreeMap<Long, String> hundred;
+    private TreeMap<String, String> hundred;
 
     public Hundreds() {
         this.hundred = new TreeMap<>();
@@ -13,7 +13,6 @@ public class Hundreds extends Num {
 
     @Override
     public String transform(String s) {
-        long i = Long.parseLong(s);
-        return this.hundred.get(i);
+        return this.hundred.get(s);
     }
 }

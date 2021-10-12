@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class Units extends Num {
 
-    private TreeMap<Long, String> unit;
+    private TreeMap<String, String> unit;
 
     public Units() {
         this.unit = new TreeMap<>();
@@ -13,8 +13,7 @@ public class Units extends Num {
 
     @Override
     public String transform(String s) {
-        long i = Long.parseLong(s);
-        return this.unit.get(i);
+        return this.unit.get(s);
     }
 
 }

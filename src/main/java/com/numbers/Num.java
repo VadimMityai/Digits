@@ -8,7 +8,7 @@ import java.util.TreeMap;
 
 public abstract class Num {
 
-    static void init(String fileName, TreeMap<Long, String> numbers) {
+    static void init(String fileName, TreeMap<String, String> numbers) {
         try {
             File file = new File(fileName);
             FileReader fr = new FileReader(file);
@@ -16,7 +16,7 @@ public abstract class Num {
             String line = reader.readLine();
             while (line != null) {
                 String[] strings = line.split(" ");
-                numbers.put(Long.parseLong(strings[0]), strings[1]);
+                numbers.put(strings[0], strings[1]);
                 line = reader.readLine();
             }
             reader.close();

@@ -13,17 +13,17 @@ class ToWordsTest {
 
     @Test
     void makeNum() {
-        TreeMap<Long, String> expexted = new TreeMap<>();
-        TreeMap<Long, String> actual = new TreeMap<>();
-        expexted.put(10000000L, "десять миллионов");
-        expexted.put(2000L, "две тысячи");
-        expexted.put(1020003L, "один миллион двадцать тысяч три");
-        expexted.put(1345L, "одна тысяча триста сорок пять");
+        TreeMap<String, String> expexted = new TreeMap<>();
+        TreeMap<String, String> actual = new TreeMap<>();
+        expexted.put("10000000", "десять миллионов");
+        expexted.put("2000", "две тысячи");
+        expexted.put("1020003", "один миллион двадцать тысяч три");
+        expexted.put("1345", "одна тысяча триста сорок пять");
 
 
         ToWords toWords = new ToWords();
-        for (Map.Entry<Long, String> entry : expexted.entrySet()) {
-            long key = entry.getKey();
+        for (Map.Entry<String, String> entry : expexted.entrySet()) {
+            String key = entry.getKey();
             String value = entry.getValue();
             expexted.replace(key, value.toLowerCase(Locale.ROOT).replaceAll("\\s+",""));
             String transformNumber = toWords.makeNum(key);

@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class Degrees extends Num{
 
-    private TreeMap<Long, String> listOfDegrees;
+    private TreeMap<String, String> listOfDegrees;
 
     public Degrees() {
         this.listOfDegrees = new TreeMap<>();
@@ -14,22 +14,29 @@ public class Degrees extends Num{
     @Override
     public String transform(String s) {
         String[] mass = new String[2];
-        if (s.length() == 3) {
-            mass[0] = String.valueOf(s.charAt(2));
-            mass[1] = s.substring(0,2);
-        } else {
-            mass[0] = String.valueOf(s.charAt(1));
-            mass[1] = String.valueOf(s.charAt(0));
+        int i = s.length();
+        switch (i) {
+            case 3 -> {
+                mass[0] = String.valueOf(s.charAt(2));
+                mass[1] = s.substring(0, 2);
+            }
+            case 4 -> {
+                mass[0] = s.substring(2, 4);
+                mass[1] = s.substring(0, 2);
+            }
+            default -> {
+                mass[0] = String.valueOf(s.charAt(1));
+                mass[1] = String.valueOf(s.charAt(0));
+            }
         }
         return newEnding(mass);
     }
 
     private String newEnding (String[] s) {
         String value = "";
-        int j = Integer.parseInt(s[0]);
-        if (j != 0) {
+        if (!s[0].equals("0")) {
         StringBuilder sb = new StringBuilder();
-        String degree = this.listOfDegrees.get((long) j );
+        String degree = this.listOfDegrees.get( s[0] );
         sb.append(degree);
         int digitForDegree;
         try {
