@@ -51,7 +51,7 @@ public class ToWords {
                         digits.remove((int )j * 3);
                         digits.add(myNums.get(k).transform(digit) + degree);
                     } else if (k == 0) {
-                        if ((int) j == 1 && digit.equals("1") || digit.equals("2")) {
+                        if ((int) j == 1 && (digit.equals("1") || digit.equals("2"))) {
                             digits.add(degree);
                         } else {
                             digits.add(myNums.get(k).transform(digit) + degree);
