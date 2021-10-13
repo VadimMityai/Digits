@@ -17,6 +17,10 @@ public class Main {
         while (b) {
             System.out.println("Введите число");
             String num = scanner.nextLine();
+            if (!Check.checkInputNumber(num)) {
+                System.out.println("Неверный ввод");
+                continue;
+            }
             ArrayList<String> words = new ArrayList<>();
             boolean c = true;
             while (c) {

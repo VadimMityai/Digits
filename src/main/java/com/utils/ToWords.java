@@ -49,7 +49,7 @@ public class ToWords {
                     if (digit.equals("1") && k == 1) {
                         digit = digit + String.valueOf(numb.charAt(0));
                         digits.remove((int )j * 3);
-                        digits.add(myNums.get(k).transform(digit) + degree);
+                        digits.add(myNums.get(k).transform(digit) + " " + degree);
                     } else if (k == 0) {
                         if ((int) j == 1 && (digit.equals("1") || digit.equals("2"))) {
                             digits.add(degree);

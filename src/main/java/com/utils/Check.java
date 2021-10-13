@@ -23,6 +23,7 @@ public class Check {
     }
 
     public static boolean checkInputNumber (String s) {
-        return true;
+        String regex = "[0-9]+";
+        return s.matches(regex);
     }
 }
