@@ -25,6 +25,10 @@ public class ToWords {
     }
 
     public String makeNum(String i) {
+        return makeWord(i);
+    }
+
+    private String makeWord(String i) {
         StringBuilder numb = new StringBuilder();
         StringBuilder word = new StringBuilder();
         numb.append(i);
@@ -73,4 +77,6 @@ public class ToWords {
 
         return word.toString();
     }
+
+
 }
