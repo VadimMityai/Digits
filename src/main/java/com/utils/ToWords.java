@@ -54,10 +54,10 @@ public class ToWords {
                         if ((int) j == 1 && (digit.equals("1") || digit.equals("2"))) {
                             digits.add(degree);
                         } else {
-                            digits.add(myNums.get(k).transform(digit) + degree);
+                            digits.add(myNums.get(k).transform(digit) + " " + degree);
                         }
                     } else if (String.valueOf(numb.charAt(0)).equals("0")){
-                        digits.add(myNums.get(k).transform(digit) + degree);
+                        digits.add(myNums.get(k).transform(digit) + " " + degree);
                     } else {
                         digits.add(myNums.get(k).transform(digit));
                     }
@@ -68,7 +68,7 @@ public class ToWords {
             numb.delete(0, 3);
         }
         for (int k = digits.size() - 1; k >= 0; k--) {
-            word.append(digits.get(k));
+            word.append(digits.get(k)).append(" ");
         }
 
         return word.toString();

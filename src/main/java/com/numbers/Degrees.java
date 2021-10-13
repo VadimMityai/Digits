@@ -56,8 +56,8 @@ public class Degrees extends Num{
             sb.deleteCharAt(sb.length() - 1);
             StringBuilder strB = new StringBuilder();
             value = switch (digitForDegree) {
-                case 1 -> strB.append("одна").append(sb.append("а")).toString();
-                case 2 -> strB.append("две").append(sb.append("и")).toString();
+                case 1 -> strB.append("одна ").append(sb.append("а")).toString();
+                case 2 -> strB.append("две ").append(sb.append("и")).toString();
                 case 3, 4 -> sb.append("и").toString();
                 default -> sb.toString();
             };
