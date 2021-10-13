@@ -44,6 +44,11 @@ public class Main {
             String transformNumber = make.makeNum(key).replaceAll("[\\s]{2,}", " ");
             result.add(transformNumber.trim());
             }
+        int i = 0;
+        for (Map.Entry<String, ArrayList<String>> entry : values.entrySet()) {
+            ArrayList<String> value = entry.getValue();
+            String s = result.get(i);
+            Check.checkEquals(value, s);
         }
 
         System.out.println("Преобразованные числа: " + result);
